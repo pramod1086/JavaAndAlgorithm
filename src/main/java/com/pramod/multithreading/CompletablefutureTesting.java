@@ -1,4 +1,4 @@
-package com.pramod.java8.ExceptionHandling;
+package com.pramod.multithreading;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

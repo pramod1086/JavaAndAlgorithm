@@ -21,7 +21,7 @@ public class BottomUpCutRod {
             aux[j-1]=q;
 
         }
-        return aux[n];
+        return aux[n-1];
 
     }
 }

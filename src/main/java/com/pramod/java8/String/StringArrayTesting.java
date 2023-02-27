@@ -3,8 +3,10 @@ package com.pramod.java8.String;
 
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,6 +19,21 @@ public class StringArrayTesting {
 
         String str = "aabcdaad";
         Arrays.asList(str.toCharArray()).stream().forEach(x -> x.equals("a"));
+
+        List<String> names = Arrays.asList("Mal", "Wash", "Kaylee", "Inara",
+                "Zoë", "Jayne", "Simon", "River", "Shepherd Book");
+        Optional<String> first = names.stream()
+                .filter(name -> name.startsWith("C"))
+                .findFirst();
+        System.out.println(first);
+        System.out.println(first.orElse("None"));
+
+
+        System.out.println(first.orElse(String.format("No result found in %s",
+                names.stream().collect(Collectors.joining(", ")))));
+        System.out.println(first.orElseGet(() ->
+                String.format("No result found in %s",
+                        names.stream().collect(Collectors.joining(", ")))));
 
 
         /// Count each character in String

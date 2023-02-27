@@ -14,9 +14,10 @@ public class ReverseString {
 
         String[] ar = {"I", "am", "pramod", "aka"};
 
-        String abc = "I am Pramod singh";
+        String abc = "I am Pramod singh  ";
 
         String rever="";
+        System.out.println("the value of trim is"+abc.trim()+ "remove trim");
 
         String stra = "ccaaffddecee" ;
         char ch[] = stra.toCharArray();
@@ -74,7 +75,9 @@ public class ReverseString {
 
         /// simple and elegent solution
         String s = Arrays.stream(ar).reduce("", (a, b) -> b + " " + a);
-        System.out.println("reversed String s " + " " + s);
+
+
+        System.out.println("elegent solution reversed String s " + " " + s);
         Optional<String> str2 = Arrays.stream(ar).reduce((a, b) -> b + " " + a
         );
 
