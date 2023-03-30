@@ -1,4 +1,4 @@
-package com.pramod.backtracking;
+package com.pramod.algorithm.backtracking;
 
 public class NqueenProblem {
     final int N = 4;

@@ -1,4 +1,4 @@
-package com.pramod.array;
+package com.pramod.algorithm.array;
 
 
 import java.util.ArrayList;

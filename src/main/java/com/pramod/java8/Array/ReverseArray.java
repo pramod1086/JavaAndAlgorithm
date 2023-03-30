@@ -23,6 +23,11 @@ public class ReverseArray {
         IntStream.rangeClosed(1, intArray.length)
                 .mapToObj(i -> intArray[intArray.length - i]).forEach(System.out::println);
 
+        int doubleSum = IntStream.rangeClosed(1, 10) .reduce(0,(x,y)-> {
+            System.out.printf("multiply", x, y);
+            System.out.printf("x=%d, y=%d%n", x, y);
+            return x+2*y; });
+        System.out.println("the value of List is" + doubleSum);
 
         // this does sorting and then reverse the array
         List<Integer> ls = Arrays.stream(intArray).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
@@ -37,6 +42,15 @@ public class ReverseArray {
 
         System.out.print("the value of int is" + data);
 
-  }
+        int sum = IntStream.rangeClosed(1, 10) .reduce((x, y) -> {
+            System.out.printf("x=%d, y=%d%n", x, y);
+            return x + y; }).orElse(0);
+
+        Integer a = 1000,b = 1000;
+
+        System.out.println(a==b);
+        System.out.println(0.1*3 == 0.3);
+    }
+
 
 }

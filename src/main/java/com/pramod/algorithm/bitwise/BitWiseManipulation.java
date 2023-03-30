@@ -1,4 +1,4 @@
-package com.pramod.bitwise;
+package com.pramod.algorithm.bitwise;
 
 public class BitWiseManipulation {
     public static void main(String args[]){

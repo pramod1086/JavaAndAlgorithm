@@ -1,4 +1,4 @@
-package com.pramod.bitwise;
+package com.pramod.algorithm.bitwise;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.pramod.algorithm;
+package com.pramod.algorithm.string;
 
 public class LSD {
     public static void main(String []args){

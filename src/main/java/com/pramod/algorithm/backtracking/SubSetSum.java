@@ -1,4 +1,4 @@
-package com.pramod.backtracking;
+package com.pramod.algorithm.backtracking;
 
 public class SubSetSum {
     public static void main(String args[]){

@@ -1,4 +1,4 @@
-package com.pramod.algorithm;
+package com.pramod.algorithm.lru;
 
 import java.util.HashMap;
 import java.util.LinkedList;
