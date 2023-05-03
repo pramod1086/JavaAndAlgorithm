@@ -2,13 +2,11 @@ package com.pramod.java8.String;
 
 
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StringArrayTesting {
     public static void main(String[] args) {
@@ -58,5 +56,17 @@ public class StringArrayTesting {
 
         //StringUtils.tokenizeToStringArray(fiEnableddisplayAccountNumber, ",", true, true);
         // System.out.println(flag);
+        List<String> wordList = Arrays.asList(
+                "this", "is", "a", "stream", "of", "strings");
+        Set<String> words = new HashSet<>(wordList);
+        Set<String> words2 = new HashSet<>(words);
+        // Now add and remove enough elements to force a rehash
+        IntStream.rangeClosed(0, 50).forEachOrdered(i ->
+                words2.add(String.valueOf(i)));
+        words2.retainAll(wordList);
+        // The sets are equal, but have different element ordering
+        System.out.println(words.equals(words2));
+        System.out.println("Before: " + words);
+        System.out.println("After : " + words2);
     }
 }
