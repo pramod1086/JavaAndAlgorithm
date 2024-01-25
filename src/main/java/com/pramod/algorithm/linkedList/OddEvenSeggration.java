@@ -3,7 +3,7 @@ package com.pramod.algorithm.linkedList;
 public class OddEvenSeggration {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,2,3,4,5};
+        int[] arr = new int[]{1,2,3,4,5,6,7,8,9};
 
         Node head = createList(arr);
         print(head);
