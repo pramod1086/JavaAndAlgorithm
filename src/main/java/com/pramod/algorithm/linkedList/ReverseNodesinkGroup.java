@@ -111,11 +111,11 @@ public class ReverseNodesinkGroup {
         head.next = reverseKGroup(current, k);
 
         return prev;
-        }
+    }
 
 
 
-        ///This needs to be fixed
+    ///This needs to be fixed
 
     private static ListNode reverseKGroupUsingStack(ListNode head,int k) {
 
