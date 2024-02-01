@@ -24,7 +24,7 @@ public class ReverseNodesinkGroup {
         System.out.println(reverseKGroupIteration(head,2));
     }
 
-    ///this is working fine
+    //this is working fine
     public static ListNode reverseKGroupIteration(ListNode head, int k) {
         if (head == null || k <= 1) {
             return head;
