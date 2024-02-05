@@ -20,8 +20,8 @@ public class ReverseNodesinkGroup {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
 
-        System.out.println(reverseKGroup(head,3));
-        System.out.println(reverseKGroupIteration(head,2));
+        System.out.println(reverseKGroup(head,2));
+//        System.out.println(reverseKGroupIteration(head,2));
     }
 
     //this is working fine
@@ -84,10 +84,11 @@ public class ReverseNodesinkGroup {
 
         int count = 0;
         ListNode current = head;
+        ListNode countingNode = head;
 
         // Count the number of nodes
-        while (current != null && count < k) {
-            current = current.next;
+        while (countingNode != null && count < k) {
+            countingNode = countingNode.next;
             count++;
         }
 
@@ -98,8 +99,6 @@ public class ReverseNodesinkGroup {
 
         // Reverse the first k nodes
         ListNode prev = null;
-        current = head;
-
         for (int i = 0; i < k; i++) {
             ListNode next = current.next;
             current.next = prev;
