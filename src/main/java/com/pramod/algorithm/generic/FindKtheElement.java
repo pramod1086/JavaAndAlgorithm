@@ -1,4 +1,4 @@
-package com.pramod.algorithm;
+package com.pramod.algorithm.generic;
 
 import java.util.stream.IntStream;
 
@@ -71,7 +71,30 @@ public class FindKtheElement {
 	    swap(arr, i, right);
 	    return i;
 	}
-	
+
+	public static int partitionSimple(Integer[] arr, int low,
+								int high)
+	{
+		int pivot = arr[high], pivotloc = low;
+		for (int i = low; i <= high; i++) {
+			// inserting elements of less value
+			// to the left of the pivot location
+			if (arr[i] < pivot) {
+				int temp = arr[i];
+				arr[i] = arr[pivotloc];
+				arr[pivotloc] = temp;
+				pivotloc++;
+			}
+		}
+
+		// swapping pivot to the final pivot location
+		int temp = arr[high];
+		arr[high] = arr[pivotloc];
+		arr[pivotloc] = temp;
+
+		return pivotloc;
+	}
+
 	public static void swap(Integer[] arr, int n1, int n2) {
 	    int temp = arr[n2];
 	    arr[n2] = arr[n1];
