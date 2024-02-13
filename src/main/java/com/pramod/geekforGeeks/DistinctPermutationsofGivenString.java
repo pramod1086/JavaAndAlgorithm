@@ -29,10 +29,13 @@ public class DistinctPermutationsofGivenString {  public static void main(String
         else {
             for (int i = left; i <= right; i++) {
                 boolean check = shouldSwap(str, left, i);
-                str = swap(str, left, i);
-                distinctPermutationsofGivenString(str, left + 1, right);
-                str = swap(str, left, i);
-            }
+                if (check) {
+                    str = swap(str, left, i);
+                    distinctPermutationsofGivenString(str, left + 1, right);
+                    str = swap(str, left, i);
+                }
+                }
+
         }
     }
 
