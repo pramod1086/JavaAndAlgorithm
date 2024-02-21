@@ -1,22 +1,63 @@
 package com.pramod.algorithm.generic;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class FindKtheElement {
 	
 	public static void main(String args[]) {
-		Integer arr[] = { 1, 2, 3, 4, 1, 11,2,1,12,11,7 };  
+		int arr[] = { 3,2,1,5,6,4 };
 		
 		FindKtheElement fs = new FindKtheElement();
-		int k = findKthElementByQuickSelect(arr, 0, arr.length-1, 4);
+		Integer[] result = Arrays.stream( arr ).boxed().toArray( Integer[]::new );
+		int k = kthLargest(arr, 0, arr.length-1, 2);
 		System.out.print(k);
 
 	}
 
+	public  static int kthLargest(int[] arr, int low,
+							int high, int k)
+	{
+		// find the partition
+		int partition = partition(arr, low, high);
 
-	
+		// if partition value is equal to the kth position,
+		// return value at k.
+		if (partition == k - 1)
+			return arr[partition];
 
-	
+			// if partition value is less than kth position,
+			// search right side of the array.
+		else if (partition < k - 1)
+			return kthLargest(arr, partition + 1, high, k);
+
+			// if partition value is more than kth position,
+			// search left side of the array.
+		else
+			return kthLargest(arr, low, partition - 1, k);
+	}
+	public static int partition(int[] arr, int low,
+						 int high)
+	{
+		int pivot = arr[high], pivotloc = low;
+		for (int i = low; i <= high; i++) {
+			// inserting elements of less value
+			// to the left of the pivot location
+			if (arr[i] > pivot) {
+				int temp = arr[i];
+				arr[i] = arr[pivotloc];
+				arr[pivotloc] = temp;
+				pivotloc++;
+			}
+		}
+
+		// swapping pivot to the final pivot location
+		int temp = arr[high];
+		arr[high] = arr[pivotloc];
+		arr[pivotloc] = temp;
+
+		return pivotloc;
+	}
 	
 	public static  int	  findKthElementByQuickSelect(Integer[] arr, int left, int right, int k) {
 	    if (k >= 0 && k <= right - left + 1) {

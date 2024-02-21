@@ -1,5 +1,6 @@
 package com.pramod.collection;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class PriorityQueueTesting {
@@ -12,7 +13,11 @@ public class PriorityQueueTesting {
         ps.add(90);
         ps.add(1);
 
+        int parent = (5 - 1) >>> 1;
+        System.out.println(parent);
         System.out.println(ps);
+
+       // Collections.sort();
 
 
 
